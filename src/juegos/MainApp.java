@@ -14,8 +14,6 @@ public class MainApp {
 				"Créditos"
 		};
 		int eleccion;
-		boolean menu = false; 
-		// boolean para volver a menú. Mientras que menu=false --> mostrar menú ?????
 		
 		Menu m1 = new Menu(MenuTresEnRaya);
 		
