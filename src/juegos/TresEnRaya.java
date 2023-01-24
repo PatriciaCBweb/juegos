@@ -108,6 +108,7 @@ public class TresEnRaya {
 			turnoJugador = 2;
 		}
 		int [] posicion = new int [2];
+<<<<<<< HEAD
 		System.out.println("Turno del jugador "+turnoJugador+":");
 		
 		Scanner sc = new Scanner(System.in);
@@ -143,10 +144,64 @@ public class TresEnRaya {
 				posicionCorrecta = true;
 				//Salir del juego
 				if(posicion[i]==33) {
+=======
+		System.out.println("Pone ficha el jugador "+turnoJugador+":");
+		Scanner sc = new Scanner(System.in);
+		boolean CambioCoord = false;
+		char coord;
+		int numero;
+		
+		for(int i=0;i<2;i++) { //bucle para coordenadas A y B		
+			//cambio de A a B y viceversa
+			CambioCoord = !CambioCoord;
+			if(CambioCoord==true) {
+				coord = 'A';
+				numero = 0;
+			}else {
+				coord = 'B';
+				numero = 1;
+			}//fin cambio
+			//coordenadas nuevas
+			System.out.print("Escribe la coordenada "+coord+": ");
+			posicion[numero]=sc.nextInt();
+			//Salir del juego
+			if(posicion[numero]==33) {
+				posicion[0]=33;
+				posicion[1]=33;
+				return posicion;
+			}
+			//comprobacion posicion correcta
+			if(posicion[numero]<0 || posicion[numero]>2) {
+				System.out.println("Error. Escribe coordenada entre 0 y 2: ");
+				System.out.print("Escribe la coordenada "+coord+": ");
+				posicion[numero]=sc.nextInt();
+			}//fin posicion correcta
+		}//bucle para coordenadas A y B
+		
+		//evitar colocar en casilla ocupada
+		while(tablero[posicion[0]][posicion[1]]=='X' || tablero[posicion[0]][posicion[1]]=='O') {
+			System.out.println("Posición ocupada. Escribe nueva posición: ");
+			for(int i=0;i<2;i++) { //bucle para coordenadas A y B		
+				//cambio de A a B y viceversa
+				CambioCoord = !CambioCoord;
+				if(CambioCoord==true) {
+					coord = 'A';
+					numero = 0;
+				}else {
+					coord = 'B';
+					numero = 1;
+				}//fin cambio
+				//coordenadas nuevas
+				System.out.print("Escribe la coordenada "+coord+": ");
+				posicion[numero]=sc.nextInt();
+				//Salir del juego
+				if(posicion[numero]==33) {
+>>>>>>> 4b9752450b9e96e0610c33ccb294de6fe05960ed
 					posicion[0]=33;
 					posicion[1]=33;
 					return posicion;
 				}
+<<<<<<< HEAD
 			}
 			//comprobacion posicion correcta
 			if(posicion[0]<0 || posicion[0]>2 || posicion[1]<0 || posicion[1]>2){
@@ -167,6 +222,20 @@ public class TresEnRaya {
 		return comprobar;
 	}//comprobarTablero
 	
+=======
+				//comprobacion posicion correcta
+				if(posicion[numero]<0 || posicion[numero]>2) {
+					System.out.println("Error. Escribe coordenada entre 0 y 2: ");
+					System.out.print("Escribe la coordenada "+coord+": ");
+					posicion[numero]=sc.nextInt();
+				}//fin posicion correcta
+			}//bucle para coordenadas A y B
+		}
+				
+		return posicion;
+	}//movimientoJugador
+	
+>>>>>>> 4b9752450b9e96e0610c33ccb294de6fe05960ed
 	public void marcarCelda(int [] posicion, boolean jugador) {
 		char ficha = ' ';
 		if(jugador == false) {
@@ -203,10 +272,13 @@ public class TresEnRaya {
 					result = "gana2";
 					break;
 				}//if J2
+<<<<<<< HEAD
 				/*if(tablero[i][i]=='X') {
 					result = "gana1";
 					break;
 				}*/
+=======
+>>>>>>> 4b9752450b9e96e0610c33ccb294de6fe05960ed
 			}//for j (columna)
 		}//for i (fila)
 		return result;
