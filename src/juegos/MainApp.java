@@ -60,18 +60,13 @@ public class MainApp {
 			turno += 1;
 			//System.out.println(jugador);
 			System.out.println();
-<<<<<<< HEAD
 			System.out.println("Movimiento: "+turno/*partida.sumaTurno()*/);
-=======
-			System.out.println("Turno: "+turno/*partida.sumaTurno()*/);
->>>>>>> 4b9752450b9e96e0610c33ccb294de6fe05960ed
 			int [] posicion = partida.movimientoJugador(jugador);
 			if(posicion[0]==33) {
 				System.out.println();
 				System.out.println("Has abandonado la partida");
 				break;
 			}
-<<<<<<< HEAD
 			
 			while(!partida.comprobarTablero(posicion)) {
 				System.out.println("Posición ocupada.");
@@ -82,9 +77,6 @@ public class MainApp {
 			
 			
 			
-=======
-			partida.marcarCelda(posicion,jugador);
->>>>>>> 4b9752450b9e96e0610c33ccb294de6fe05960ed
 			partida.mostrarTablero();
 			System.out.println();
 			String result = partida.resultadoJuego(turno);
